@@ -18,7 +18,7 @@ npm install @gamestdio/signal
 ```typescript
 import { createSignal } from "strong-events";
 
-const onSomeEvent = createEventHandler<(string) => void>();
+const onSomeEvent = createSignal<(string) => void>();
 
 // register a callback
 onSomeEvent(function(value) {

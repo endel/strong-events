@@ -1,9 +1,10 @@
 {
   "name": "strong-events",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Strong Typed Event Emitter for TypeScript / JavaScript.",
   "main": "lib/index.js",
   "scripts": {
+    "prepublish": "tsc",
     "test": "mocha --require ts-node/register test/**Test.ts"
   },
   "repository": {
