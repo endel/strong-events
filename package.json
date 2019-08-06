@@ -1,0 +1,33 @@
+{
+  "name": "strong-events",
+  "version": "1.0.0",
+  "description": "Strong Typed Event Emitter for TypeScript / JavaScript.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha --require ts-node/register test/**Test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/gamestdio/events.git"
+  },
+  "keywords": [
+    "events",
+    "emitter",
+    "event-driven",
+    "asynchronous"
+  ],
+  "author": "Endel Dreyer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gamestdio/events/issues"
+  },
+  "homepage": "https://github.com/gamestdio/events#readme",
+  "devDependencies": {
+    "@types/mocha": "^5.2.6",
+    "@types/sinon": "^7.0.11",
+    "mocha": "^6.1.4",
+    "sinon": "^7.3.2",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.5"
+  }
+}
