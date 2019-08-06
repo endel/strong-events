@@ -10,7 +10,7 @@ TODO
 ## Installation
 
 ```
-npm install @gamestdio/signal
+npm install strong-events
 ```
 
 ## Usage
