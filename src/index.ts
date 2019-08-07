@@ -3,7 +3,7 @@ type FunctionParameters<T extends (...args: any[]) => any> =
     ? P
     : never;
 
-class EventEmitter<CallbackSignature extends (...args: any[]) => any> {
+export class EventEmitter<CallbackSignature extends (...args: any[]) => any> {
   handlers: Array<CallbackSignature> = [];
 
   register(cb: CallbackSignature, once: boolean = false) {
