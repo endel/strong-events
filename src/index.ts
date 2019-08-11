@@ -44,6 +44,7 @@ export function createSignal<CallbackSignature extends (...args: any[]) => void>
   }
   register.remove = (cb: CallbackSignature) => emitter.remove(cb)
   register.invoke = (...args: FunctionParameters<CallbackSignature>) => emitter.invoke(...args);
+  register.clear = () => emitter.clear();
 
   return register;
 }
