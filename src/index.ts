@@ -12,9 +12,7 @@ export class EventEmitter<CallbackSignature extends (...args: any[]) => any> {
   }
 
   invoke(...args: FunctionParameters<CallbackSignature>) {
-    for (let i = 0, l = this.handlers.length; i < l; i++) {
-      this.handlers[i].apply(null, args);
-    }
+    this.handlers.forEach((handler) => handler(...args));
   }
 
   remove (cb: CallbackSignature) {
