@@ -1,6 +1,6 @@
 {
   "name": "strong-events",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Strong Typed Event Emitter for TypeScript / JavaScript.",
   "main": "lib/index.js",
   "types": "lib/index.d.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/gamestdio/events.git"
+    "url": "git+ssh://git@github.com/endel/strong-events.git"
   },
   "keywords": [
     "events",
@@ -21,9 +21,9 @@
   "author": "Endel Dreyer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gamestdio/events/issues"
+    "url": "https://github.com/endel/strong-events/issues"
   },
-  "homepage": "https://github.com/gamestdio/events#readme",
+  "homepage": "https://github.com/endel/strong-events#readme",
   "devDependencies": {
     "@types/mocha": "^5.2.6",
     "@types/sinon": "^7.0.11",
