@@ -15,6 +15,10 @@ export class EventEmitter<CallbackSignature extends (...args: any[]) => any> {
     this.handlers.forEach((handler) => handler(...args));
   }
 
+  invokeAsync(...args: FunctionParameters<CallbackSignature>) {
+    return Promise.all(this.handlers.map((handler) => handler(...args)));
+  }
+
   remove (cb: CallbackSignature) {
     const index = this.handlers.indexOf(cb);
     this.handlers[index] = this.handlers[this.handlers.length - 1];
@@ -26,7 +30,7 @@ export class EventEmitter<CallbackSignature extends (...args: any[]) => any> {
   }
 }
 
-export function createSignal<CallbackSignature extends (...args: any[]) => void>() {
+export function createSignal<CallbackSignature extends (...args: any[]) => void | Promise<any>>() {
   const emitter = new EventEmitter<CallbackSignature>();
 
   function register(this: any, cb: CallbackSignature): EventEmitter<CallbackSignature> {
@@ -42,6 +46,7 @@ export function createSignal<CallbackSignature extends (...args: any[]) => void>
   }
   register.remove = (cb: CallbackSignature) => emitter.remove(cb)
   register.invoke = (...args: FunctionParameters<CallbackSignature>) => emitter.invoke(...args);
+  register.invokeAsync = (...args: FunctionParameters<CallbackSignature>) => emitter.invokeAsync(...args);
   register.clear = () => emitter.clear();
 
   return register;
